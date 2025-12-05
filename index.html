@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoping Assistent</title>
+    <title>Smart Shoping Assistent</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Hello World</p>
+    <header>
+        <h1>🛒 Smart Shopping Assistant</h1>
+    </header>
+
+    <main>
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search product...">
+            <button id="searchBtn">search</button>
+        </div>
+
+        <p id="message"></p>
+
+        <div id="results" class="hidden">
+            <h2 id="ProductName"></h2>
+
+            <div id="priceList"></div>
+
+            <h3 id="bestDeal"></h3>
+
+            <img id="productImg" class="product-img hidden" alt="Product image">
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+   
     
 </body>
 </html>
