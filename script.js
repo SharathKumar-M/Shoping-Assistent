@@ -1,14 +1,15 @@
+// Get elements
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const messageEl = document.getElementById("message");
 const results = document.getElementById("results");
 const priceList = document.getElementById("priceList");
-const productNameEl = document.getElementById("productName");
+const productNameEl = document.getElementById("ProductName");
 const bestDealEl = document.getElementById("bestDeal");
+const productImg = document.getElementById("productImg");
+const suggestionsBox = document.getElementById("suggestions")
 
-searchBtn.addEventListener("click", searchProduct);
-
-// Fake product data (later we replace with API)
+// Fake product data
 const products = {
   "iphone": [
     { store: "Amazon", price: 69999 },
@@ -21,6 +22,8 @@ const products = {
     { store: "Reliance Digital", price: 1899 }
   ]
 };
+
+searchBtn.addEventListener("click", searchProduct);
 
 function searchProduct() {
   const query = searchInput.value.toLowerCase().trim();
@@ -36,7 +39,7 @@ function searchProduct() {
     return;
   }
 
-  // Clear old UI
+  // Clear UI
   priceList.innerHTML = "";
   messageEl.textContent = "";
 
@@ -45,13 +48,11 @@ function searchProduct() {
   productNameEl.textContent = query.toUpperCase();
   results.classList.remove("hidden");
 
-  const productImg = document.getElementById("productImg");
+  // Load image
+  productImg.src = `https://source.unsplash.com/400x400/?${encodeURIComponent(query)}`;
+  productImg.classList.remove("hidden");
 
-  fetchProductImage(query).then(imgUrl => {
-    productImg.scr = imgUrl;
-    productImg.classList.remove("hidden");
-  });
-
+  // Find best deal
   let lowest = stores[0];
 
   stores.forEach(item => {
@@ -68,15 +69,10 @@ function searchProduct() {
   bestDealEl.textContent = `💰 Best Deal: ${lowest.store} - ₹${lowest.price}`;
 }
 
-async function fetchProductImage(query) {
-    try {
-        const url =  `https://source.unsplash.com/400x400/?${encodeURIComponent(query)}`;
-        return url;
+const productNames = Object.keys(product);
 
-    }   catch (err) {
-        console.log("Image error:", err);
-        return "";
+searchInput.addEventListener("input", ()=> {
+  const text = searchInput.value.toLowerCase().trim();
+  
 
-    }
-    
-}
+})
