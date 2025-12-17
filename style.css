@@ -1,40 +1,48 @@
 body {
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fafbfd;
-    padding:20px;
-    
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
 }
 
+
 header {
-    
-    text-align: center;
-    font-size:20px;
-    margin-bottom:20px;
+  padding: 25px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
 }
+
 
 
 
 .search-box {
-    display: flex;
-    justify-content: center;
-    gap:10px;
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  gap: 10px;
 }
 
 .search-box input {
-    width: 300px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #6a6464;
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  font-size: 16px;
+  outline: none;
 }
 
 .search-box button {
-    padding: 10px 20px;
-    border: none;
-    background: #7cafc9;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+  padding: 14px 22px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
 }
+
 
 .hidden {
     display: none;
@@ -45,27 +53,58 @@ header {
 }
 
 .store-box {
-    padding: 12px;
-    background: white;
-    border-radius: 6px;
-    margin: 10px 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  margin: 12px 0;
+  font-weight: 500;
 }
+
 
 .search-box span {
     font-weight: bold;
 }
 
 .product-img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  margin: 15px 0;
-  display: block;
+  width: 260px;
+  height: 260px;
+  border-radius: 14px;
+  margin: 20px auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
+
 #results {
+  max-width: 700px;
+  margin: 40px auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   text-align: center;
 }
+
+
+:root {
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+
+#message {
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+
