@@ -6,7 +6,7 @@ import './App.css'
 
 const App = () => {
   return (
-      <h2>Functional Arrow Component</h2>
+      <h2>Functional</h2>
   )
  
 }
